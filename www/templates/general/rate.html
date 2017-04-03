@@ -1,0 +1,78 @@
+<ion-view view-title="" id="moduleContact" class="moduleContact" style="background: -webkit-linear-gradient(top, rgba(209, 148, 158, 0.5) 0%, rgb(209, 148, 158) 60%), url({{imageMBackground}}) no-repeat center center fixed;">
+    <ion-content class="padding ion-content-view" has-header="false" drag-content="false">
+      <div class="initials"></div>
+        <div class="content">
+            <div style="padding-top:50px;" class="profilePicture profileImgMenuContact" style="background-image:url({{imageMProfile}});"></div>
+            <br />
+            <div class="profileName">{{nameUser}}</div>
+            <div class="ffContainer">
+                <a href="#/app/followers" class="followProfile">{{follower}} Followers</a>
+                &nbsp;&nbsp;<span>|</span>&nbsp;&nbsp;
+                <a href="#/app/following" class="followProfile">{{following}} Following</a>
+                <div class="stars" ng-bind-html="star"></div>
+            </div>
+            <br />
+            <div class="form">
+                <div class="ranking">
+                    <img ng-click="rate(1)" ng-src="{{img[1]}}" />
+                    <img ng-click="rate(2)" ng-src="{{img[2]}}" />
+                    <img ng-click="rate(3)" ng-src="{{img[3]}}" />
+                    <img ng-click="rate(4)" ng-src="{{img[4]}}" />
+                    <img ng-click="rate(5)" ng-src="{{img[5]}}" />
+                </div>
+                <div class="clear"></div>
+
+                <div class="row" style="padding:0px;">
+                  <div class="col col-50 leyenda">
+                    <img src="assets/starFull.png" />
+                    <img src="assets/starFull.png" />
+                    <img src="assets/starFull.png" />
+                    <img src="assets/starFull.png" />
+                    <img src="assets/starFull.png" />
+                  </div>
+                  <div class="col col-50 whiteColor" style="text-align:left;font-weight:bold;">Excelent</div>
+                </div>
+
+                <div class="row" style="padding:0px;">
+                  <div class="col col-50 leyenda">
+                    <img src="assets/starFull.png" />
+                    <img src="assets/starFull.png" />
+                    <img src="assets/starFull.png" />
+                    <img src="assets/starFull.png" />
+                  </div>
+                  <div class="col col-50 whiteColor" style="text-align:left;font-weight:bold;">Good</div>
+                </div>
+
+                <div class="row" style="padding:0px;">
+                  <div class="col col-50 leyenda">
+                    <img src="assets/starFull.png" />
+                    <img src="assets/starFull.png" />
+                    <img src="assets/starFull.png" />
+                  </div>
+                  <div class="col col-50 whiteColor" style="text-align:left;font-weight:bold;">Average</div>
+                </div>
+
+                <div class="row" style="padding:0px;">
+                  <div class="col col-50 leyenda">
+                    <img src="assets/starFull.png" />
+                    <img src="assets/starFull.png" />
+                  </div>
+                  <div class="col col-50 whiteColor" style="text-align:left;font-weight:bold;">Poor</div>
+                </div>
+
+                <div class="row" style="padding:0px;">
+                  <div class="col col-50 leyenda">
+                    <img src="assets/starFull.png" />
+                  </div>
+                  <div class="col col-50 whiteColor" style="text-align:left;font-weight:bold;">Bad</div>
+                </div>
+              </div>
+              <br />
+              <form name="rateForm" novalidate>
+                <input required ng-model="rateValue" type="hidden"/>
+                <a nav-transition="android" ng-disabled="rateForm.$invalid" ng-click="sendRate(rateValue)" class="button button-block buttonRed">SEND</a>
+              </form>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

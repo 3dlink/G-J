@@ -1,0 +1,125 @@
+<ion-view view-title="DETAILS" id="moduleDetails" class="backgroundDetail">
+  <ion-content>
+    <div class="viewContent" style="margin-top: 68px;">
+      <ion-slide-box on-slide-changed="slideHasChanged($index)" does-continue="true" ng-if="only1Img">
+        <ion-slide>
+          <div class="img1" style="background-image: url({{imgS[1]}});"></div>
+        </ion-slide>
+      </ion-slide-box>
+
+      <ion-slide-box on-slide-changed="slideHasChanged($index)" does-continue="true" ng-if="only2Img">
+        <ion-slide>
+          <div class="img1" style="background-image: url({{imgS[1]}});"></div>
+        </ion-slide>
+        <ion-slide>
+          <div class="img1" style="background-image: url({{imgS[2]}});"></div>
+        </ion-slide>
+      </ion-slide-box>
+
+      <ion-slide-box on-slide-changed="slideHasChanged($index)" does-continue="true" ng-if="only3Img">
+        <ion-slide>
+          <div class="img1" style="background-image: url({{imgS[1]}});"></div>
+        </ion-slide>
+        <ion-slide>
+          <div class="img1" style="background-image: url({{imgS[2]}});"></div>
+        </ion-slide>
+        <ion-slide>
+          <div class="img1" style="background-image: url({{imgS[3]}});"></div>
+        </ion-slide>
+      </ion-slide-box>
+      <hr style="width:10px; position:absolute; left:17px; border: 0; border-top: 1px solid #BC0000;"/>
+      <div class="itemDetails redColor">
+        <div style="padding-left:15px;" class="pbrand"><span>{{details.brand}}</span></div>
+        <div style="padding-left:15px;" class="pname"><span>{{details.title}}</span></div>
+        <p style="padding-left:0px !important;margin-left:15px !important; padding-top:2px;" ng-if="details.sizeID != 0" class="psize">Size: {{details.size}}</p>
+        <p style="padding-left:0px !important;margin-left:15px !important; padding-top:2px;" ng-if="details.sizeID == 0" class="psize">Size: -</p>
+        <div style="padding-left:15px;" class="pprice">$<span>{{details.pricesite}}</span></div>
+        <a nav-transition="android" href="#/app/feed" class="button button-block buttonRed">BUY</a>
+      </div>
+      <!-- <div class="itemLiked redColor" ng-click="likeHeart()" style="background-image:url(assets/heartempty.png);">{{details.likes}}</div> -->
+      <div class="itemLiked redColor" ng-click="likeHeart(details)" style="background-image:url({{details.likeIMG}});">{{details.likes}}</div>
+      <div class="clear"></div>
+
+      <div class="infoMember">
+        <div class="left memberDetails" >
+          <a menu-close href="#/appSeven/detailsMember/{{user._id}}" class="left">
+              <div class="profileImgMember" style="background-image:url({{user.image}});"></div>
+          </a>
+          <div class="nameContact">{{user.firstname}} {{user.lastname}}</div>
+          <a href="#/appFive/contactmember/{{user._id}}" menu-close class="buttonContact">Contact Member</a>
+        </div>
+        <div class="right memberResumen">
+          <div class="stars" style="text-align: center;" ng-bind-html="stars"></div>
+          <div class="memberNumber">
+            <b>{{user.sales}}</b> sales | <b>{{user.swaps}}</b> swaps
+          </div>
+        </div>
+        <div class="clear"></div>
+      </div>
+      <br />
+      <div class="itemCaract">
+          <div class="nameCaract left">Category</div>
+          <div class="resultCaract right redColor">{{details.type}}</div>
+          <div class="clear"></div>
+      </div>
+      <div class="itemCaract">
+        <div class="nameCaract left">Conditions</div>
+        <div class="resultCaract right redColor">{{details.condition}}</div>
+        <div class="clear"></div>
+      </div>
+      <div class="itemCaract">
+        <div class="nameCaract left">Material</div>
+        <div class="resultCaract right redColor">{{details.material}}</div>
+        <div class="clear"></div>
+      </div>
+      <div class="itemCaract">
+        <div class="nameCaract left">Color</div>
+        <div class="resultCaract right redColor">{{details.color}}</div>
+        <div class="clear"></div>
+      </div>
+      <br />
+      <div class="itemDescrip">
+        <div class="titleTransparent redColor">
+          DESCRIPTION
+        </div>
+        <div class="contentDescription">
+          {{details.description}}
+        </div>
+      </div>
+
+      <div class="otherItems infoMember" >
+        <div class="titleTransparent redColor">
+          OTHER ITEMS FOR SALE
+        </div>
+        <br />
+        <div style="width:70%; font-style: italic; margin:0 auto;" class="whiteColor" ng-show="emptyItems">
+          This member has no other items for sale at the moment.
+        </div>
+        <div class="swiper-container otherDetails" style="margin-left:20px;" ng-show="fullItems">
+          <div class="swiper-wrapper" style="">
+            <div class="swiper-slide" ng-repeat="foo in foos" end-repeat style="text-align: center; font-size: 50px; margin-left:3px !important;">
+              <div class="swiper-slide" style="margin-top:5px; margin-right:3px !important;">
+                <a href="#/app/youritem/{{foo._id}}" style="margin-right:5px; height:300px; margin: 0 auto;" class="itemFeed">
+                  <div class="itemIMG" style=" background-image:url({{foo.img1}});"></div>
+                  <hr style="margin-bottom:5px; width:10px; position:absolute; text-align:left; margin-left:7px; border: 0; border-top: 1px solid #BC0000;"/>
+                  <div class="itemDetails redColor" style="text-align:left; padding:20px 20px; margin-top:5px;">
+                    <div class="pbrand">{{foo.brand}}</div>
+                    <div class="pname">{{foo.title}}</div>
+                    <p ng-if="foo.sizeID != 0" class="psize">Size: {{foo.size}}</p>
+                    <p ng-if="foo.sizeID == 0" class="psize">Size: -</p>
+                    <p class="pprice">${{foo.pricesite}}</p>
+                  </div>
+                  <div ng-click="likeHeart(foo)" class="itemLiked redColor" style="background-image:url({{foo.likeIMG}}); margin-top:-20px; margin-right:20px;">{{foo.likes}}</div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <br />
+        </div>
+        <div style="width:100%; height:10px;" class="infoMember"></div>
+        <br /><br /><br />
+      </div>
+    </div>
+
+  </ion-content>
+</ion-view>

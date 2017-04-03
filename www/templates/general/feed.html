@@ -1,0 +1,29 @@
+<ion-view view-title="My Feed" id="moduleFeed" class="backgroundGeneric">
+  <ion-content>
+    <div class="viewContent">
+      <!-- <div class="addItemEmpty right redColor">
+        <div class="deleteItem" ng-click="removeIma(1)"></div>
+        Item or items you want to match with
+      </div> -->
+      <div ng-repeat="feed in feeds">
+        <div class="row" ng-if="$even">
+          <div style="margin-right:5px; " ng-hide="!feed._id" class="itemFeed col col-50" ng-repeat="feed in [feeds[$index],feeds[$index + 1]]">
+            <a href="#/app/youritem/{{feed._id}}" menu-close >
+              <div class="itemIMG" style="background-image:url({{feed.img1}});"></div>
+              <hr style="width:10px; position:absolute; text-align:left; margin-left:7px; border: 0; border-top: 1px solid #BC0000;"/>
+              <div class="itemDetails redColor">
+                <div class="pbrand">{{feed.brand}}</div>
+                <div class="pname">{{feed.title}}</div>
+                <p ng-if="feed.size != 0" class="psize">Size: {{feed.size}}</p>
+                <p ng-if="feed.size == 0" class="psize">Size: -</p>
+                <p class="pprice">${{feed.pricesite}}</p>
+              </div>
+            </a>
+            <!-- <div ng-click="likeHeart($event, feed._id, feed.user,feed.likeIMG,feed.likes)" class="itemLiked redColor" style="background-image:url({{feed.likeIMG}});">{{feed.likes}}</div> -->
+            <div ng-click="likeHeart(feed)" id="{{feed._id}}" class="itemLiked redColor" style="background-image:url({{feed.likeIMG}});">{{feed.likes}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

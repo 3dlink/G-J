@@ -1,0 +1,234 @@
+<ion-view view-title="My Matchs" id="moduleNewMatch" class="backgroundGeneric">
+  <ion-content>
+    <div class="viewContent">
+      <div class="">
+          <div style="margin-left:10px;margin-left:5px; width:40%;" class="itemFeed left" ng-show="MyOnlyItems">
+            <div class="itemIMG" style="background-image:url({{my.img1}});"></div>
+            <!-- <hr style="width:10px; position:absolute; text-align:left; margin-left:7px; border: 0; border-top: 1px solid #BC0000;"/> -->
+            <div class="itemDetails redColor">
+              <div class="pbrand">{{my.brand}}</div>
+              <div class="pname">{{my.title}}</div>
+              <p ng-if="my.size != 0" class="psize">Size: {{my.size}}</p>
+              <p ng-if="my.size == 0" class="psize">Size: -</p>
+              <p class="pprice">${{my.pricesite}}</p>
+            </div>
+            <div class="itemLiked redColor" style="background-image:url(assets/heartempty.png);">{{my.likes}}</div>
+          </div>
+
+
+        <div style="width: 40%; float: left; " ng-show="sonDos">
+          <div style="margin-left:5px; width:100%; height: 105px;" class="itemFeed" ng-show="MyTwoItems">
+            <div class="itemIMGTwo" style="background-image:url({{my.img1}});"></div>
+            <!-- <hr style="width:10px; position:absolute; text-align:left; margin-left:7px; border: 0; border-top: 1px solid #BC0000;"/> -->
+            <div class="itemDetailsTwo redColor">
+              <div class="pbrand">{{my.brand}}</div>
+              <div class="pname">{{my.title}}</div>
+              <p style="font-size:15px; margin-top:2px !important;" class="pprice">${{my.pricesite}}</p>
+            </div>
+            <!-- <div class="itemLikedTwo redColor" style="margin-top:-25px !important; background-image:url(assets/heartempty.png);">{{my.likes}}</div> -->
+          </div>
+          <div style="margin-left:5px; width:100%; height: 105px; margin-top:10px;" class="itemFeed" ng-show="MyTwoItemsfull">
+            <div class="itemIMGTwo" style="background-image:url({{my1.img1}});"></div>
+            <!-- <hr style="width:10px; position:absolute; text-align:left; margin-left:7px; border: 0; border-top: 1px solid #BC0000;"/> -->
+            <div class="itemDetailsTwo redColor">
+              <div class="pbrand">{{my1.brand}}</div>
+              <div class="pname">{{my1.title}}</div>
+              <p style="font-size:15px; margin-top:2px !important;" class="pprice">${{my1.pricesite}}</p>
+            </div>
+            <!-- <div class="itemLikedTwo redColor" style="margin-top:-25px !important; background-image:url(assets/heartempty.png);">{{my1.likes}}</div> -->
+          </div>
+        </div>
+
+
+
+        <div style="width: 40%; float: left;" ng-show="sonTres">
+          <div style="margin-left:5px; width:100%; height: 66px;" class="itemFeed" ng-show="MyTwoItems1">
+            <div class="itemIMGTwo" style="background-image:url({{my.img1}});"></div>
+            <!-- <hr style="width:10px; position:absolute; text-align:left; margin-left:7px; border: 0; border-top: 1px solid #BC0000;"/> -->
+            <div class="itemDetailsThree redColor">
+              <div class="pbrand">{{my.brand}}</div>
+              <div class="pname">{{my.title}}</div>
+              <p style="font-size:12px !important;" class="pprice">${{my.pricesite}}</p>
+            </div>
+            <div class="itemLikedThree redColor" style="background-image:url(assets/heartempty.png);">{{my.likes}}</div>
+          </div>
+          <div style="margin-left:5px; width:100%; height: 66px; margin-top:10px;" class="itemFeed" ng-show="MyTwoItemsfull1">
+            <div class="itemIMGTwo" style="background-image:url({{my1.img1}});"></div>
+            <!-- <hr style="width:10px; position:absolute; text-align:left; margin-left:7px; border: 0; border-top: 1px solid #BC0000;"/> -->
+            <div class="itemDetailsThree redColor">
+              <div class="pbrand">{{my1.brand}}</div>
+              <div class="pname">{{my1.title}}</div>
+              <p style="font-size:12px !important;" class="pprice">${{my1.pricesite}}</p>
+            </div>
+            <div class="itemLikedThree redColor" style="background-image:url(assets/heartempty.png);">{{my1.likes}}</div>
+          </div>
+          <div style="margin-left:5px; width:100%; height: 65px; margin-top:10px;" class="itemFeed" ng-show="MyThreeItemsfull">
+            <div class="itemIMGTwo" style="background-image:url({{my2.img1}});"></div>
+            <!-- <hr style="width:10px; position:absolute; text-align:left; margin-left:7px; border: 0; border-top: 1px solid #BC0000;"/> -->
+            <div class="itemDetailsThree redColor">
+              <div class="pbrand">{{my2.brand}}</div>
+              <div class="pname">{{my2.title}}</div>
+              <p style="font-size:12px !important;" class="pprice">${{my2.pricesite}}</p>
+            </div>
+            <div class="itemLikedThree redColor" style="background-image:url(assets/heartempty.png);">{{my2.likes}}</div>
+          </div>
+        </div>
+
+
+
+
+
+
+
+
+          <div class="addItemEmpty right redColor" ng-show="ItemsEmpty">
+            Item or items you want to match with
+          </div>
+
+
+          <div style="margin-right:5px; width:40%;" class="itemFeed right" ng-show="oneOnly">
+            <div class="itemIMG" style="background-image:url({{your.img1}});"></div>
+            <div class="itemDetails redColor">
+              <div class="pbrand">{{your.brand}}</div>
+              <div class="pname">{{your.title}}</div>
+              <p ng-if="your.size != 0" class="psize">Size: {{your.size}}</p>
+              <p ng-if="your.size == 0" class="psize">Size: -</p>
+              <p class="pprice">${{your.pricesite}}</p>
+            </div>
+            <div class="itemLiked redColor" style="background-image:url(assets/heartlikes.png);">{{your.likes}}</div>
+          </div>
+
+
+
+          <div style="margin-right:5px; width:40%; height: 105px;" class="itemFeed right" ng-show="twoItems">
+            <div class="itemIMGTwo" style="background-image:url({{your.img1}});"></div>
+            <!-- <hr style="width:10px; position:absolute; text-align:left; margin-left:7px; border: 0; border-top: 1px solid #BC0000;"/> -->
+            <div class="itemDetailsTwo redColor">
+              <div class="pbrand">{{your.brand}}</div>
+              <div class="pname">{{your.title}}</div>
+              <p style="font-size:15px; margin-top:2px !important;" class="pprice">${{your.pricesite}}</p>
+            </div>
+            <!-- <div class="itemLikedTwo redColor" style="margin-top:-25px !important; background-image:url(assets/heartlikes.png);">{{your.likes}}</div> -->
+          </div>
+
+          <div class="addItemEmptyTwo right redColor" ng-show="twoItemsEmpty">
+            Item or items you want to match with
+          </div>
+          <div style="position:relative; margin-right:5px; width:40%; height: 105px; margin-top:10px;" class="itemFeed right" ng-show="twoItemsfull">
+            <div ng-if="extra1.thisview" class="deletePhoto" ng-click="deleteItem(extra1,2)"></div>
+            <div class="itemIMGTwo" style="background-image:url({{extra1.img1}});"></div>
+            <hr style="width:10px; position:absolute; text-align:left; margin-left:7px; border: 0; border-top: 1px solid #BC0000;"/>
+            <div class="itemDetailsTwo redColor">
+              <div class="pbrand">{{extra1.brand}}</div>
+              <div class="pname">{{extra1.title}}</div>
+              <p style="font-size:15px; margin-top:2px !important;" class="pprice">${{extra1.pricesite}}</p>
+            </div>
+            <!-- <div class="itemLikedTwo redColor" style="margin-top:-25px !important; background-image:url(assets/heartlikes.png);">{{extra1.likes}}</div> -->
+          </div>
+
+
+
+
+          <div style="margin-right:5px; width:40%; height: 66px;" class="itemFeed right" ng-show="twoItems1">
+            <div class="itemIMGTwo" style="background-image:url({{your.img1}});"></div>
+            <!-- <hr style="width:10px; position:absolute; text-align:left; margin-left:7px; border: 0; border-top: 1px solid #BC0000;"/> -->
+            <div class="itemDetailsThree redColor">
+              <div class="pbrand">{{your.brand}}</div>
+              <div class="pname">{{your.title}}</div>
+              <p style="font-size:12px !important;" class="pprice">${{your.pricesite}}</p>
+            </div>
+            <div class="itemLikedThree redColor" style="background-image:url(assets/heartlikes.png);">{{your.likes}}</div>
+          </div>
+          <br />
+          <div style="margin-right:5px; width:40%; height: 66px; margin-top:10px;" class="itemFeed right" ng-show="twoItemsfull1">
+            <div class="itemIMGTwo" style="background-image:url({{extra1.img1}});"></div>
+            <!-- <hr style="width:10px; position:absolute; text-align:left; margin-left:7px; border: 0; border-top: 1px solid #BC0000;"/> -->
+            <div class="itemDetailsThree redColor">
+              <div class="pbrand">{{extra1.brand}}</div>
+              <div class="pname">{{extra1.title}}</div>
+              <p style="font-size:12px !important;" class="pprice">${{extra1.pricesite}}</p>
+            </div>
+            <div class="itemLikedThree redColor" style="background-image:url(assets/heartlikes.png);">{{extra1.likes}}</div>
+          </div>
+          <div class="addItemEmptyThree right redColor" ng-show="threeItemsEmpty">
+            Item or items you want to match with
+          </div>
+          <div style="position:relative;margin-right:5px; width:40%; height: 65px; margin-top:10px;" class="itemFeed right" ng-show="threeItemsfull">
+            <div ng-if="extra2.thisview" class="deletePhoto" ng-click="deleteItem(extra2,3)"></div>
+            <div class="itemIMGTwo" style="background-image:url({{extra2.img1}});"></div>
+            <!-- <hr style="width:10px; position:absolute; text-align:left; margin-left:7px; border: 0; border-top: 1px solid #BC0000;"/> -->
+            <div class="itemDetailsThree redColor">
+              <div class="pbrand">{{extra2.brand}}</div>
+              <div class="pname">{{extra2.title}}</div>
+              <p style="font-size:12px !important;" class="pprice">${{extra2.pricesite}}</p>
+            </div>
+            <div class="itemLikedThree redColor" style="background-image:url(assets/heartlikes.png);">{{extra2.likes}}</div>
+          </div>
+
+
+          <div style="width:15%;text-align: center; z-index: 10;" class="center match">
+            <a> <img src="assets/matchRed.png" alt=""> </a>
+            <div style="" ng-class="addItems" ng-click="addItemMatch()"></div>
+            <div ng-class="sendMatch" ng-click="sendMatchToServer()"></div>
+          </div>
+
+          <br />
+          <div class="clear"></div>
+      </div>
+      <div style="text-align:center; margin-top:20px;" ng-show="buttonOptions">
+        <div ng-click="approve()" class="button newMatchButton activated whiteColor">APPROVE</div>
+        <div ng-click="declined()" class="button newMatchButton activated whiteColor">DECLINE</div>
+        <div ng-click="rematch()" class="button newMatchButton activated whiteColor" ng-hide="rematchUser">REMATCH</div>
+      </div>
+      <div style="text-align:center; margin-top:20px;" ng-show="waiting">
+        <div class="button newMatchButtonWaiting">WAITING FOR APPROVAL</div>
+      </div>
+      <div style="text-align:center; margin-top:20px;" ng-show="decline">
+        <div class="button newMatchButtonWaiting">DECLINED</div>
+      </div>
+
+      <div style="text-align:center; margin-top:20px;" ng-show="successMatch">
+        <div class="button newMatchButtonWaiting">APPROVED</div>
+        <a menu-close href="#/app/feed" class="button newMatchButton activated whiteColor">CHECK OUT AND SWAP</a>
+      </div>
+
+
+      <div class="startSection" ng-show="itemsAndProfile">
+          <a menu-close href="#/appSeven/detailsMember/{{memberIdUser}}">
+              <div class="profileImgMember left" style="background-image:url({{memberImage}});"></div>
+          </a>
+          <div class="resumenProfile left" style="position:relative; width:70%;">
+            {{memberName}}
+            <br>
+            <div class="memberNumber">
+              <a class="followProfile"><b>0</b> Followers</a> |
+              <a class="followProfile"><b>0</b> Following</a>
+            </div>
+            <div class="stars" ng-bind-html="stars"></div>
+            <div class="" style="right:10px; top: 10px; position:absolute;">
+              <a href="#/appFive/contactmember/{{user._id}}" menu-close class="buttonContact">Contact Member</a>
+            </div>
+          </div>
+          <div class="clear"></div>
+
+          <div style="margin-top:10px;" ng-repeat="myItem in myItems">
+            <div class="row" ng-if="$even">
+              <div id="{{item._id}}" ng-class="item.actuve" ng-click="addNewItem(item)" ng-hide="!item._id" class="myItem col col-50" ng-repeat="item in [myItems[$index],myItems[$index + 1]]">
+                <div class="itemIMG" style="background-image:url({{item.img1}});"></div>
+                <!-- <hr style="width:10px; position:absolute; text-align:left; margin-left:7px; border: 0; border-top: 1px solid #BC0000;"/> -->
+                <div class="itemDetails redColor">
+                  <div class="pbrand">{{item.brand}}</div>
+                  <div class="pname">{{item.title}}</div>
+                  <p ng-if="item.size != 0" class="psize">Size: {{item.size}}</p>
+                  <p ng-if="item.size == 0" class="psize">Size: -</p>
+                  <p class="pprice">${{item.pricesite}}</p>
+                </div>
+                <div class="itemLiked redColor" style="background-image:url(assets/heartempty.png);">{{item.likes}}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

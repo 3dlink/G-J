@@ -1,0 +1,18 @@
+<ion-view view-title="" id="moduleContactUs" class=" moduleContact backgroundGeneric2">
+    <ion-content class="padding ion-content-view" has-header="false" drag-content="false">
+        <div class="content">
+            <div class="profilePicture ImgMenuContact"></div>
+            <div class="logoImage"></div>
+            <br />
+            <div class="form">
+              <form name="contactUs" novalidate>
+                <input required ng-model="contact.Name" type="text" class="whiteColor button button-block buttonTransparent" placeholder="Name"/>
+                <input id="usernamE" disabled required ng-model="contact.Username" type="text" class="whiteColor button button-block buttonTransparent" placeholder="Username"/>
+                <textarea required ng-model="contact.Message" class="button button-block buttonTransparent" rows="3" placeholder="Your Message"></textarea>
+                <a nav-transition="android" ng-click="sendEmail(contact)" ng-disabled="contactUs.$invalid" class="button button-block buttonRed">SEND</a>
+              </form>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>
+ <!-- href="#/appFive/contactsuccess" -->

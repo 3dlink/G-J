@@ -1,0 +1,92 @@
+
+<ion-view view-title="" id="moduleProfile" style=" background: -webkit-linear-gradient(top, rgba(209, 148, 158, 0.5) 0%, rgb(209, 148, 158) 90%), url({{imgaBackground}}) no-repeat center center; background-size:cover;" >
+  <!-- <ion-view view-title="" id="moduleProfile" style=" background-image:url({{imgaBackground}}); background-size:cover;" > -->
+
+  <ion-content ng-class='withoutScroll' has-header="false" drag-content="false">
+
+
+    <div class="pre-modal" ng-hide="sure">
+        <div class="myModal" style="top:200px; bottom:initial !important; margin:0 auto;">
+          <div class="myContent padding redColor">
+            <div class="msjModal">
+              Are you sure you want to erase this item?
+            </div>
+            <hr />
+            <div ng-click="callDeleted()" class="yesDelete">YES</div>
+            <div ng-click="closeModal()" class="noDelete">NO</div>
+          </div>
+        </div>
+    </div>
+
+    <!-- <div class="pre-modal" ng-hide="modal">
+        <div class="myModal">
+          <div class="myContent padding redColor">
+            <div class="imgModal"><img src="assets/Loading.gif"></div>
+          </div>
+        </div>
+    </div> -->
+
+    <div class="padding ion-content-view">
+
+    <div class="initials"></div>
+    <div class="content">
+      <div uploadfile ng-show="fullImg" class="profilePicture profileImgMenu" style="background-image:url({{imgaProfile}}) !important;"></div>
+      <div uploadfile ng-show="emptyImg" class="profilePicture profileImgMenu emptyImg"><span class="redColor">PROFILE PIC</span></div>
+      <!-- <input type="file" name="fileInput" id="fileInput" onchange="angular.element(this).scope().select(event)" /> -->
+
+      <input id="upload" style="display:none;" name="fileInput" type="file" onchange="angular.element(this).scope().select(event)">
+
+      <div class="profileName">{{name}}</div>
+      <div class="ffContainer">
+        <a href="#/app/followers" class="followProfile">{{follower}} Followers</a>
+        &nbsp;&nbsp;<span>|</span>&nbsp;&nbsp;
+        <a href="#/app/following" class="followProfile">{{following}} Following</a>
+      </div>
+      <br>
+      <div class="stars" style="text-align: center;" ng-bind-html="stars"></div>
+      <div ng-show="emptys" class="listItems" style="background:none !important;">
+        <div class="row" >
+          <div ng-class="myItemsEmpty[0]" class="col col-50" style="position:relative;" ng-click="goToo(goTo[0])">
+            <div ng-if="myItemsEmpty[0] != 'myItemsEmpty' " ng-click="deleteThisItem(ids[0])" class="redColor deleteMyItem">X</div>
+            <a href="" ng-bind-html="fItem[0]"></a>
+          </div>
+          <div class="col col-50" ng-class="myItemsEmpty[1]" style="position:relative;" ng-click="goToo(goTo[1])">
+            <div ng-if="myItemsEmpty[1] != 'myItemsEmpty' " ng-click="deleteThisItem(ids[1])" class="redColor deleteMyItem">X</div>
+            <a href="" ng-bind-html="fItem[1]"></a>
+          </div>
+        </div>
+        <div class="row" >
+          <div class="col col-50" ng-class="myItemsEmpty[2]" style="position:relative;" ng-click="goToo(goTo[2])">
+            <div ng-if="myItemsEmpty[2] != 'myItemsEmpty' " ng-click="deleteThisItem(ids[2])" class="redColor deleteMyItem">X</div>
+            <a href="" ng-bind-html="fItem[2]"></a>
+          </div>
+          <div class="col col-50" ng-class="myItemsEmpty[3]" style="position:relative;" ng-click="goToo(goTo[3])">
+            <div ng-if="myItemsEmpty[3] != 'myItemsEmpty' " ng-click="deleteThisItem(ids[3])" class="redColor deleteMyItem">X</div>
+            <a href="" ng-bind-html="fItem[3]"></a>
+          </div>
+        </div>
+        <div class="clear"></div>
+      </div>
+      <div ng-repeat="myItem in myItems">
+        <div class="row" ng-if="$even">
+        <div ng-hide="!item._id" style="position:relative;"  class="myItem col col-50" ng-repeat="item in [myItems[$index],myItems[$index + 1]]">
+            <div ng-click="deleteThisItem(item._id)" class="redColor deleteMyItem" scroll-on-click>X</div>
+            <a class="pincel" menu-close href="#/appThree/edititem/{{item._id}}"></a>
+            <a href="#/app/youritem/{{item._id}}" menu-close style="text-decoration:none !important;">
+              <div class="itemIMG" style="background-image:url({{item.img1}});"></div>
+              <hr style="width:10px; position:absolute; text-align:left; margin-left:7px; border: 0; border-top: 1px solid #BC0000;"/>
+              <div class="itemDetails redColor">
+                <div class="pbrand">{{item.brand}}</div>
+                <div class="pname">{{item.title}}</div>
+                <p ng-if="item.size != 0" class="psize">Size: {{item.size}}</p>
+                <p ng-if="item.size == 0" class="psize">Size: -</p>
+                <p class="pprice">${{item.pricesite}}</p>
+              </div>
+              <div class="itemLiked redColor" style="background-image:url(assets/heartempty.png);">{{item.likes}}</div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

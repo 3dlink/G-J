@@ -1,0 +1,37 @@
+<ion-view view-title="" id="moduleProfile" style=" background: -webkit-linear-gradient(top, rgba(209, 148, 158, 0.5) 0%, rgb(209, 148, 158) 90%), url({{imageMBackground}}) no-repeat center center fixed;">
+  <ion-content class="padding ion-content-view" has-header="false" drag-content="false">
+    <div class="initials"></div>
+    <!-- <a href="#/appFive/contactmember/{{memberId}}" menu-close class="buttonContact" style="display: block; right: 10px; position:absolute; z-index:10;">Contact Member</a> -->
+
+    <div class="content">
+      <div class="profilePicture profileImgMenu" style="background-image:url({{imageMProfile}});" ng-click="follow()">
+        <div class="statusFollow" style="background-image: url({{status}});"></div>
+      </div>
+      <div class="profileName">{{memberName}}</div>
+      <div class="ffContainer">
+        <a href="#/app/followers" class="followProfile">{{memberFollowers}} Followers</a>
+        &nbsp;&nbsp;<span>|</span>&nbsp;&nbsp;
+        <a href="#/app/following" class="followProfile">{{memberFollowing}} Following</a>
+      </div>
+      <div class="stars" style="text-align: center;" ng-bind-html="stars"></div>
+      <div ng-repeat="myItem in myItems">
+        <div class="row" ng-if="$even">
+          <div ng-hide="!item._id" class="myItem col col-50" ng-repeat="item in [myItems[$index],myItems[$index + 1]]">
+            <a href="#/app/youritem" menu-close>
+              <div class="itemIMG" style="background-image:url({{item.img1}});"></div>
+              <hr style="width:10px; position:absolute; text-align:left; margin-left:7px; border: 0; border-top: 1px solid #BC0000;"/>
+              <div class="itemDetails redColor">
+                <div class="pbrand">{{item.brand}}</div>
+                  <div class="pname">{{item.title}}</div>
+                  <p ng-if="item.size != 0" class="psize">Size: {{item.size}}</p>
+                  <p ng-if="item.size == 0" class="psize">Size: -</p>
+                  <p class="pprice">${{item.priceyour}}</p>
+              </div>
+            </a>
+            <div ng-click="likeHeart(item)" class="itemLiked redColor" style="background-image:url({{item.likeIMG}});">{{item.likes}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

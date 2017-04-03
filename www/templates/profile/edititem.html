@@ -1,0 +1,191 @@
+<ion-view view-title="Edit Item" id="moduleMyItem" class="backgroundSettings">
+  <ion-content >
+    <form name="addItemForm" novalidate>
+      <div class="viewContent">
+        <div class="endSection">
+          <div class="addImageItem left" style="background-image:url({{img1}}); background-size:{{IsizE1}};" >
+            <div style="letter-spacing:2px; padding-top:100px;" class="redColor" ng-show="tx1" ng-click="addIma(1)"> ADD PHOTO </div>
+            <div class="deletePhoto" ng-show="dl1" ng-click="removeIma(1)"></div>
+          </div>
+          <div class="addImageItem right" style="background-image:url({{img3}}); background-size:{{IsizE3}};" >
+            <div style="letter-spacing:2px; padding-top:100px;" class="redColor" ng-show="tx3" ng-click="addIma(3)"> ADD PHOTO </div>
+            <div class="deletePhoto" ng-show="dl3" ng-click="removeIma(3)"></div>
+          </div>
+          <div class="addImageItem center" style="background-image:url({{img2}}); background-size:{{IsizE2}};">
+            <div style="letter-spacing:2px; padding-top:100px;" class="redColor" ng-show="tx2" ng-click="addIma(2)"> ADD PHOTO </div>
+            <div class="deletePhoto" ng-show="dl2" ng-click="removeIma(2)"></div>
+          </div>
+        </div>
+        <div class="endSection">
+          <!-- {{Item}} -->
+          <input required ng-model="Item.title" name="title" type="text" class="whiteColor button button-block inputTransparent" placeholder="Title"/>
+          <select required class="button-select button-block selectTransparent redColor" name="" ng-model="Item.brand" ng-options="brand.name as brand.name for brand in brands">
+            <option value="">BRANDS</option>
+          </select>
+          <br />
+          <div class="linksContent">
+              <div class="itemLink redColor">Brand not listed? <b><a href="#/appFive/contactus" menu-close> Contact us </a></b></div>
+          </div>
+        </div>
+        <input required type="hidden" ng-model="Item.type" value="{{type}}"/>
+        <input required type="hidden" ng-model="Item.sizeID" value="{{sizeID}}"/>
+        <input required type="hidden" ng-model="Item.size" value="{{size}}"/>
+
+        <div class="endSection">
+          <div class="linksContent">
+              <div class="itemLink redColor" ng-click="changeCat()">Change Category</div>
+          </div>
+          <div ng-show="lastCategory">
+            <button style="text-transform: uppercase;" class="button button-block buttonShow buttonShowActive" >{{Item.type}}</button>
+          </div>
+
+          <div ng-show="changeCategory">
+            <button class="button button-block buttonShow" ng-class="optActive['clothes']" ng-click="clothesOpts('clothes')">CLOTHES</button>
+            <div class="caractFather" ng-show="Ons['clothes']">
+              <div class="caractSubtitle">
+                Generic
+              </div>
+              <div class="caractOpts">
+                <div ng-click="crt(1)" ng-class="caractOption['1']">XXS</div>
+                <div ng-click="crt(2)" ng-class="caractOption['2']">XS</div>
+                <div ng-click="crt(3)" ng-class="caractOption['3']">S</div>
+                <div ng-click="crt(4)" ng-class="caractOption['4']">M</div>
+                <div ng-click="crt(5)" ng-class="caractOption['5']">L</div>
+                <div ng-click="crt(6)" ng-class="caractOption['6']">XL</div>
+                <div ng-click="crt(7)" ng-class="caractOption['7']">XLL</div>
+              </div>
+              <br />
+              <div class="caractSubtitle sizeShoes">
+                Top, pants & dresses
+              </div>
+              <div class="caractOpts sizeShoes">
+                <div ng-click="crt(8)" ng-class="caractOption['8']">0</div>
+                <div ng-click="crt(9)" ng-class="caractOption['9']">2</div>
+                <div ng-click="crt(10)" ng-class="caractOption['10']">4</div>
+                <div ng-click="crt(11)" ng-class="caractOption['11']">6</div>
+                <div ng-click="crt(12)" ng-class="caractOption['12']">8</div>
+                <div ng-click="crt(13)" ng-class="caractOption['13']">10</div>
+                <div ng-click="crt(14)" ng-class="caractOption['14']">12</div>
+                <div ng-click="crt(15)" ng-class="caractOption['15']">14</div>
+                <div ng-click="crt(16)" ng-class="caractOption['16']">16</div>
+                <div ng-click="crt(17)" ng-class="caractOption['17']">18</div>
+                <div ng-click="crt(18)" ng-class="caractOption['18']">20</div>
+              </div>
+            </div>
+            <button class="button button-block buttonShow" ng-class="optActive['shoes']" ng-click="clothesOpts('shoes')">SHOES</button>
+            <div class="caractFather" ng-show="Ons['shoes']">
+              <div class="caractOpts sizeShoes">
+                <div ng-click="crt(19)" ng-class="caractOption['19']">4.5	</div>
+                <div ng-click="crt(20)" ng-class="caractOption['20']">5	</div>
+                <div ng-click="crt(21)" ng-class="caractOption['21']">5.5	</div>
+                <div ng-click="crt(22)" ng-class="caractOption['22']">6	</div>
+                <div ng-click="crt(23)" ng-class="caractOption['23']">6.5	</div>
+                <div ng-click="crt(24)" ng-class="caractOption['24']">7	</div>
+                <div ng-click="crt(25)" ng-class="caractOption['25']">7.5	</div>
+                <div ng-click="crt(26)" ng-class="caractOption['26']">8	</div>
+                <div ng-click="crt(27)" ng-class="caractOption['27']">8.5	</div>
+                <div ng-click="crt(28)" ng-class="caractOption['28']">9	</div>
+                <div ng-click="crt(29)" ng-class="caractOption['29']">9.5	</div>
+                <div ng-click="crt(30)" ng-class="caractOption['30']">10	</div>
+                <div ng-click="crt(31)" ng-class="caractOption['31']">10.5	</div>
+                <div ng-click="crt(32)" ng-class="caractOption['32']">11	</div>
+                <div ng-click="crt(33)" ng-class="caractOption['33']">11.5	</div>
+                <div ng-click="crt(34)" ng-class="caractOption['34']">12</div>
+                <br />
+              </div>
+              <br />
+            </div>
+            <button class="button button-block buttonShow" ng-class="optActive['accessories']" ng-click="clothesOpts('accessories')">ACCESSORIES</button>
+            <button class="button button-block buttonShow" ng-class="optActive['bags']" ng-click="clothesOpts('bags')">BAGS</button>
+            <button class="button button-block buttonShow" ng-class="optActive['jewelry']" ng-click="clothesOpts('jewelry')">JEWELRY</button>
+          </div>
+        </div>
+        <div class="endSection">
+          <select style="text-transform:uppercase;" required class="button-select button-block selectTransparent redColor" ng-model="Item.condition">
+            <option disabled selected value="">CONDITION </option>
+            <option>New with labels</option>
+            <option>Great condition</option>
+            <option>Good condition</option>
+            <option>Fair condition</option>
+          </select>
+          <select style="text-transform:uppercase;" required class="button-select button-block selectTransparent redColor" ng-model="Item.color">
+            <option disabled selected value="">COLOR</option>
+            <option>Anthracite</option>
+            <option>Beige</option>
+            <option>Black</option>
+            <option>Blue</option>
+            <option>Brown</option>
+            <option>Burgundy</option>
+            <option>Camel</option>
+            <option>Ecru</option>
+            <option>Gold</option>
+            <option>Green</option>
+            <option>Grey</option>
+            <option>Khaki</option>
+            <option>Metallic</option>
+            <option>Multicolor</option>
+            <option>Navy</option>
+            <option>Orange</option>
+            <option>Pink</option>
+            <option>Purple</option>
+            <option>Red</option>
+            <option>Silver</option>
+            <option>Turquoise</option>
+            <option>Yellow</option>
+            <option>White</option>
+            <option>OTHER</option>
+          </select>
+          <select style="text-transform:uppercase;" required class="button-select button-block selectTransparent redColor" ng-model="Item.material">
+            <option value="" disabled selected>MATERIAL </option>
+            <option ng-show="onlyJewelry">Cashmere  </option>
+            <option ng-show="onlyJewelry">Cotton  </option>
+            <option ng-show="onlyJewelry">Leather</option>
+            <option ng-show="onlyJewelry">Denim - Jeans  </option>
+            <option ng-show="onlyJewelry">Sponge</option>
+            <option ng-show="onlyJewelry">Fake fur</option>
+            <option ng-show="onlyJewelry">Wool</option>
+            <option ng-show="onlyJewelry">Linen</option>
+            <option ng-show="onlyJewelry">Polyester</option>
+            <option ng-show="onlyJewelry">Silk</option>
+            <option ng-show="onlyJewelry">Suede  </option>
+            <option ng-show="onlyJewelry">Synthetic  </option>
+            <option ng-show="onlyJewelry">Tweed  </option>
+            <option ng-show="onlyJewelry">Velvet  </option>
+            <option ng-show="onlyJewelry">Viscose  </option>
+            <option ng-show="onlyJewelry">OTHER</option>
+
+            <option ng-show="notJewelry">Cashmere  </option>
+            <option ng-show="notJewelry">Cotton  </option>
+            <option ng-show="notJewelry">Leather</option>
+            <option ng-show="notJewelry">Denim - Jeans </option>
+            <option ng-show="notJewelry">Sponge</option>
+            <option ng-show="notJewelry">Fake fur</option>
+            <option ng-show="notJewelry">Wool</option>
+            <option ng-show="notJewelry">Linen</option>
+            <option ng-show="notJewelry">Polyester</option>
+            <option ng-show="notJewelry">Silk</option>
+            <option ng-show="notJewelry">Suede  </option>
+            <option ng-show="notJewelry">Synthetic  </option>
+            <option ng-show="notJewelry">Tweed  </option>
+            <option ng-show="notJewelry">Velvet  </option>
+            <option ng-show="notJewelry">Viscose  </option>
+            <option ng-show="notJewelry">OTHER</option>
+          </select>
+        </div>
+        <div class="endSection">
+          <textarea ng-model="Item.description" class="button button-block textareaTransparent whiteColor" placeholder="Description"></textarea>
+          <label class="currencyTransparent item-input">
+            <span class="input-label">Price on the site</span>
+            <input ng-model="Item.priceSite" format="currency" type="text" class="button button-block inputTransparent textRight" placeholder="$ {{Item.pricesite}}">
+          </label>
+          <label class="currencyTransparent item-input">
+            <span class="input-label">Price for you</span>
+            <input id="priceYour" disabled format="currency" type="text" class="button button-block inputTransparent textRight priceYourClass" placeholder="$ {{Item.priceyour}}">
+          </label>
+          <br />
+          <button ng-click="add(Item)" ng-disabled="addItemForm.$invalid" class="button button-block buttonRed">SAVE CHANGES</button>
+        </div>
+      </div>
+    </form>
+  </ion-content>
+</ion-view>

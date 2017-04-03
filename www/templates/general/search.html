@@ -1,0 +1,161 @@
+<ion-view view-title="{{title}}" id="moduleMySettings" class="backgroundSettings viewSearch">
+  <ion-content >
+    <div class="pre-modal" style="height: 102%;" ng-hide="modal">
+        <div class="myModal" style="bottom: 250px; margin-left:0px;">
+          <div class="myContent padding redColor">
+            <div ng-click="closeModal()" class="closeModal ">X</div>
+            <div class="msjModal">No results for your<br /><span>search</span></div>
+            <hr />
+          </div>
+        </div>
+    </div>
+    <div class="viewContent" style="">
+      <!-- <div class="pre-modal" style="margin-left:-10px;" ng-hide="modal"> -->
+      <form name="searchForm" novalidate ng-show="formSearch" style="padding-right:10px; padding-left:10px;">
+        <br />
+        <input type="hidden" name="type" ng-model="Search.type" value="{{type}}"/>
+
+        <input type="hidden" name="size" ng-model="Search.size" value="{{size}}"/>
+        <input type="hidden" name="size" ng-model="Search.size2" value="{{size2}}"/>
+        <input type="hidden" name="size" ng-model="Search.size3" value="{{size3}}"/>
+
+        <select name="brand" style="width:100%;" class="button-select2 button-block redColor" ng-model="Search.brand" ng-options="brand.name as brand.name for brand in brands">
+          <option value="">BRANDS</option>
+        </select>
+        <div class="button button-block buttonShow titleTypeButton" style="text-align:left;" ng-class="optActive['clothes']" ng-click="clothesOpts('clothes')">CLOTHES</div>
+        <div class="caractFather" ng-show="Ons['clothes']">
+          <div class="caractSubtitle">
+            Generic
+          </div>
+          <div class="caractOpts">
+            <div ng-click="crt(1)" ng-class="caractOption['1']">XXS</div>
+            <div ng-click="crt(2)" ng-class="caractOption['2']">XS</div>
+            <div ng-click="crt(3)" ng-class="caractOption['3']">S</div>
+            <div ng-click="crt(4)" ng-class="caractOption['4']">M</div>
+            <div ng-click="crt(5)" ng-class="caractOption['5']">L</div>
+            <div ng-click="crt(6)" ng-class="caractOption['6']">XL</div>
+            <div ng-click="crt(7)" ng-class="caractOption['7']">XLL</div>
+          </div>
+          <br />
+          <div class="caractSubtitle">
+            Top, pants & dresses
+          </div>
+          <div class="caractOpts sizeShoes">
+            <div ng-click="crt(8)" ng-class="caractOption['8']">0</div>
+            <div ng-click="crt(9)" ng-class="caractOption['9']">2</div>
+            <div ng-click="crt(10)" ng-class="caractOption['10']">4</div>
+            <div ng-click="crt(11)" ng-class="caractOption['11']">6</div>
+            <div ng-click="crt(12)" ng-class="caractOption['12']">8</div>
+            <div ng-click="crt(13)" ng-class="caractOption['13']">10</div>
+            <div ng-click="crt(14)" ng-class="caractOption['14']">12</div>
+            <div ng-click="crt(15)" ng-class="caractOption['15']">14</div>
+            <div ng-click="crt(16)" ng-class="caractOption['16']">16</div>
+            <div ng-click="crt(17)" ng-class="caractOption['17']">18</div>
+            <div ng-click="crt(18)" ng-class="caractOption['18']">20</div>
+          </div>
+        </div>
+        <div class="button button-block buttonShow titleTypeButton"  style="text-align:left;" ng-class="optActive['shoes']" ng-click="clothesOpts('shoes')">SHOES</div>
+        <div class="caractFather" ng-show="Ons['shoes']">
+          <div class="caractOpts sizeShoes">
+            <div ng-click="crt(19)" ng-class="caractOption['19']">4.5	</div>
+            <div ng-click="crt(20)" ng-class="caractOption['20']">5	</div>
+            <div ng-click="crt(21)" ng-class="caractOption['21']">5.5	</div>
+            <div ng-click="crt(22)" ng-class="caractOption['22']">6	</div>
+            <div ng-click="crt(23)" ng-class="caractOption['23']">6.5	</div>
+            <div ng-click="crt(24)" ng-class="caractOption['24']">7	</div>
+            <div ng-click="crt(24)" ng-class="caractOption['24']">7.5	</div>
+            <div ng-click="crt(26)" ng-class="caractOption['26']">8	</div>
+            <div ng-click="crt(27)" ng-class="caractOption['27']">8.5	</div>
+            <div ng-click="crt(28)" ng-class="caractOption['28']">9	</div>
+            <div ng-click="crt(29)" ng-class="caractOption['29']">9.5	</div>
+            <div ng-click="crt(30)" ng-class="caractOption['30']">10	</div>
+            <div ng-click="crt(31)" ng-class="caractOption['31']">10.5	</div>
+            <div ng-click="crt(32)" ng-class="caractOption['32']">11	</div>
+            <div ng-click="crt(33)" ng-class="caractOption['33']">11.5	</div>
+            <div ng-click="crt(34)" ng-class="caractOption['34']">12</div>
+            <br />
+          </div>
+          <br />
+        </div>
+        <div class="button button-block buttonShow titleTypeButton" style="text-align:left;" ng-class="optActive['accessories']" ng-click="clothesOpts('accessories')">ACCESSORIES</div>
+        <div class="button button-block buttonShow titleTypeButton" style="text-align:left;" ng-class="optActive['bags']" ng-click="clothesOpts('bags')">BAGS</div>
+        <div class="button button-block buttonShow titleTypeButton" style="text-align:left;" ng-class="optActive['jewelry']" ng-click="clothesOpts('jewelry')">JEWELRY</div>
+        <select style="text-transform:uppercase;" class="button-select2 button-block redColor" ng-model="Search.color" style="width:100%;">
+          <option value="">COLOR</option>
+          <option>Anthracite</option>
+          <option>Beige</option>
+          <option>Black</option>
+          <option>Blue</option>
+          <option>Brown</option>
+          <option>Burgundy</option>
+          <option>Camel</option>
+          <option>Ecru</option>
+          <option>Gold</option>
+          <option>Green</option>
+          <option>Grey</option>
+          <option>Khaki</option>
+          <option>Metallic</option>
+          <option>Multicolor</option>
+          <option>Navy</option>
+          <option>Orange</option>
+          <option>Pink</option>
+          <option>Purple</option>
+          <option>Red</option>
+          <option>Silver</option>
+          <option>Turquoise</option>
+          <option>Yellow</option>
+          <option>White</option>
+          <option>OTHER</option>
+        </select>
+        <button ng-click="find(Search)" ng-disabled="searchForm.$invalid"  class="button button-block buttonRed">SEARCH</button>
+      </form>
+      <div id="topSearch" class="swiper-container" ng-show="sliderResult">
+        <div class="swiper-wrapper">
+          <div ng-repeat="foo in foos" end-repeat class="swiper-slide" style="text-align: center;">
+          <div class="swiper-slide" style="text-align: center;">
+            <div class="swiper-slide" style="width:100%; margin-top:12px;">
+              <div class="redColor headerSlider" style="text-align:center; padding-left:10px;" >
+                [<span>{{foo.type}}</span>/<span></span>{{foo.color}}</span>/<span></span>{{foo.material}}</span>]
+              </div>
+              <a href="#/app/youritem/{{foo._id}}" style="margin-right:5px; height:350px; width: 100%; margin: 0 auto;" class="itemFeed">
+                <div class="itemIMG" style="background-image:url({{foo.img1}});">
+                  <div style="background-size:18px; background-image:url(assets/rowI.png);" class="swiper-button-prev"></div>
+                  <div style="background-size:18px; background-image:url(assets/rowD.png);" class="swiper-button-next"></div>
+                </div>
+                <hr style="width:10px; position:absolute; text-align:left; margin-left:20px; border: 0; border-top: 1px solid #BC0000;"/>
+                <div class="itemDetails redColor search" style="text-align:left; padding:20px 20px;">
+                  <div class="pbrand">{{foo.brand}}</div>
+                  <div class="pname">{{foo.title}}</div>
+                  <p ng-if="foo.size != 0" class="psize">Size: {{foo.size}}</p>
+                  <p ng-if="foo.size == 0" class="psize">Size: -</p>
+                  <p class="pprice">${{foo.pricesite}}</p>
+                </div>
+                <div ng-click="likeHeart(foo)" class="itemLikedS redColor" style="background-image:url({{foo.likeIMG}}); margin-top:-20px; margin-right:20px;">{{foo.likes}}</div>
+              </a>
+              <br />
+              <div style="margin:0 auto; text-align:center;">
+                <div ng-if="$index + 1 != totalSearch" class="button buttonRed resultButton resultButtonNext">
+                  <img src="assets/rowWhiteLeft.png" alt="" style="float:left;width: 10px; margin-top: 15px;"/>
+                  NEXT
+                </div>
+                <div ng-if="$index + 1 == totalSearch" class="button buttonRed resultButton resultButtonNext disabled">
+                  <img src="assets/rowWhiteLeft.png" alt="" style="float:left;width: 10px; margin-top: 15px;"/>
+                  NEXT
+                </div>
+                <div ng-class="foo.buttonLiked" ng-click="likeHeart(foo)" class="button buttonRed resultButton resultButtonLike">
+                  <img src="assets/heartSearch.png" alt="" style="float:right;width: 25px; margin-top: 10px;"/>
+                  LIKE
+                </div>
+              </div>
+              <div class="clear"></div>
+              <br />
+              <div class="redColor" style="font-size:13px; text-align:center;">
+                <b>{{$index + 1}}</b> out of <b>{{totalSearch}}</b>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

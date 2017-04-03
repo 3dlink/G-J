@@ -1,0 +1,110 @@
+<ion-view view-title="Settings" id="moduleMySettings" class="backgroundSettings">
+  <ion-content >
+    <div class="viewContent">
+
+      <input type="hidden" ng-model="initSettings.sizeOneID" value="{{sizeOneID}}"/>
+      <input type="hidden" ng-model="initSettings.sizeOne" value="{{sizeOne}}"/>
+
+      <input type="hidden" ng-model="initSettings.sizeOneID2" value="{{sizeOneID2}}"/>
+      <input type="hidden" ng-model="initSettings.sizeOne2" value="{{sizeOne2}}"/>
+
+      <input type="hidden" ng-model="initSettings.sizeOneID3" value="{{sizeOneID3}}"/>
+      <input type="hidden" ng-model="initSettings.sizeOne3" value="{{sizeOne3}}"/>
+
+
+
+      <input type="hidden" ng-model="initSettings.sizeTwoID" value="{{sizeTwoID}}"/>
+      <input type="hidden" ng-model="initSettings.sizeTwo" value="{{sizeTwo}}"/>
+
+      <input type="hidden" ng-model="initSettings.sizeTwoID2" value="{{sizeTwoID2}}"/>
+      <input type="hidden" ng-model="initSettings.sizeTwo2" value="{{sizeTwo2}}"/>
+
+      <input type="hidden" ng-model="initSettings.sizeTwoID3" value="{{sizeTwoID}}3"/>
+      <input type="hidden" ng-model="initSettings.sizeTwo3" value="{{sizeTwo}}3"/>
+
+
+
+      <input type="hidden" ng-model="initSettings.sizeThreeID" value="{{sizeThreeID}}"/>
+      <input type="hidden" ng-model="initSettings.sizeThree" value="{{sizeThree}}"/>
+
+      <input type="hidden" ng-model="initSettings.sizeThreeID2" value="{{sizeThreeID2}}"/>
+      <input type="hidden" ng-model="initSettings.sizeThree2" value="{{sizeThree2}}"/>
+
+      <input type="hidden" ng-model="initSettings.sizeThreeID3" value="{{sizeThreeID3}}"/>
+      <input type="hidden" ng-model="initSettings.sizeThree3" value="{{sizeThree3}}"/>
+
+      <div class="settingsHeader">
+        Please let us know about your size so your feed will display more items that you could like. The sizes are not shown on your profile and are confidential.
+      </div>
+      <div class="endSection">
+        <div class="button button-block redColor titleTypeButton">CLOTHES</div>
+        <div class="caractFather">
+          <div class="caractSubtitle">
+            Generic
+          </div>
+          <div class="caractOpts">
+            <div ng-click="crt1(1)" ng-class="caractOption1['1']">XXS</div>
+            <div ng-click="crt1(2)" ng-class="caractOption1['2']">XS</div>
+            <div ng-click="crt1(3)" ng-class="caractOption1['3']">S</div>
+            <div ng-click="crt1(4)" ng-class="caractOption1['4']">M</div>
+            <div ng-click="crt1(5)" ng-class="caractOption1['5']">L</div>
+            <div ng-click="crt1(6)" ng-class="caractOption1['6']">XL</div>
+            <div ng-click="crt1(7)" ng-class="caractOption1['7']">XLL</div>
+          </div>
+          <div class="caractSubtitle">
+            Top, pants & dresses
+          </div>
+          <div class="caractOpts sizeShoes">
+            <div ng-click="crt2(8)" ng-class="caractOption2['8']">0</div>
+            <div ng-click="crt2(9)" ng-class="caractOption2['9']">2</div>
+            <div ng-click="crt2(10)" ng-class="caractOption2['10']">4</div>
+            <div ng-click="crt2(11)" ng-class="caractOption2['11']">6</div>
+            <div ng-click="crt2(12)" ng-class="caractOption2['12']">8</div>
+            <div ng-click="crt2(13)" ng-class="caractOption2['13']">10</div>
+            <div ng-click="crt2(14)" ng-class="caractOption2['14']">12</div>
+            <div ng-click="crt2(15)" ng-class="caractOption2['15']">14</div>
+            <div ng-click="crt2(16)" ng-class="caractOption2['16']">16</div>
+            <div ng-click="crt2(17)" ng-class="caractOption2['17']">18</div>
+            <div ng-click="crt2(18)" ng-class="caractOption2['18']">20</div>
+          </div>
+        </div>
+        <button class="button button-block redColor titleTypeButton">SHOES</button>
+        <div class="caractOpts sizeShoes">
+          <div ng-click="crt3(19)" ng-class="caractOption3['19']">4.5	</div>
+          <div ng-click="crt3(20)" ng-class="caractOption3['20']">5	</div>
+          <div ng-click="crt3(21)" ng-class="caractOption3['21']">5.5	</div>
+          <div ng-click="crt3(22)" ng-class="caractOption3['22']">6	</div>
+          <div ng-click="crt3(23)" ng-class="caractOption3['23']">6.5	</div>
+          <div ng-click="crt3(24)" ng-class="caractOption3['24']">7	</div>
+          <div ng-click="crt3(25)" ng-class="caractOption3['25']">7.5	</div>
+          <div ng-click="crt3(26)" ng-class="caractOption3['26']">8	</div>
+          <div ng-click="crt3(27)" ng-class="caractOption3['27']">8.5	</div>
+          <div ng-click="crt3(28)" ng-class="caractOption3['28']">9	</div>
+          <div ng-click="crt3(29)" ng-class="caractOption3['29']">9.5	</div>
+          <div ng-click="crt3(30)" ng-class="caractOption3['30']">10	</div>
+          <div ng-click="crt3(31)" ng-class="caractOption3['31']">10.5	</div>
+          <div ng-click="crt3(32)" ng-class="caractOption3['32']">11	</div>
+          <div ng-click="crt3(33)" ng-class="caractOption3['33']">11.5	</div>
+          <div ng-click="crt3(34)" ng-class="caractOption3['34']">12</div>
+        </div>
+      </div>
+
+      <div class="endSection">
+        <button class="button button-block redColor titleTypeButton">PROFILE</button>
+          <div class="settingsFooter">
+            Last but not least please complete your profile and you’re ready to <b>swap, buy and sell!</b>
+          </div>
+            <form name="formSettings" novalidate>
+              <input name="lastname" required type="text" ng-model="initSettings.lastname" class="button button-block inputTransparent" placeholder="Last Name">
+              <input name="firstname" required type="text" ng-model="initSettings.firstname" class="button button-block inputTransparent" placeholder="First Name">
+              <input name="firstAddress" required type="text" ng-model="initSettings.firstAddress" class="button button-block inputTransparent" placeholder="Address 1">
+              <input name="secondAddress" type="text" ng-model="initSettings.secondAddress" class="button button-block inputTransparent" placeholder="Address 2">
+              <input name="city" required type="text" ng-model="initSettings.city" class="button button-block inputTransparent" placeholder="City">
+              <input name="zip" required type="text" ng-model="initSettings.zip" class="button button-block inputTransparent" placeholder="Zip Code">
+            <br />
+            <a menu-close nav-transition="android" ng-disabled="formSettings.$invalid" ng-click="saveInitSettings(initSettings)" class="button button-block buttonRed">SAVE</a>
+          </form>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,16 @@
+@media (max-height: 450px){
+  .scroll {
+    height: auto !important;
+  }
+  .footerMenu{
+    bottom: 0px;
+    position: relative;
+  }
+  #moduleInit .content {
+    padding-top: 0px;
+  }
+
+  #moduleInit .bottomLink{
+    position: relative;
+  }
+}

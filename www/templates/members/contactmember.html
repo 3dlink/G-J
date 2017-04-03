@@ -1,0 +1,24 @@
+<ion-view view-title="MESSAGE MEMBER" id="moduleContact" class="redColor moduleContact" style="background: -webkit-linear-gradient(top, rgba(209, 148, 158, 0.5) 0%, rgb(209, 148, 158) 60%), url({{imageMBackground}}) no-repeat center center fixed;">
+    <ion-content class="padding ion-content-view" has-header="false" drag-content="false">
+      <div class="initials"></div>
+        <div class="content">
+            <div class="profilePicture profileImgMenuContact" style="background-image:url({{imageMProfile}});"></div>
+            <br /><br />
+            <div class="profileName">{{name}}</div>
+            <div class="ffContainer">
+                <a href="#/app/followers" class="followProfile">{{follower}} Followers</a>
+                &nbsp;&nbsp;<span>|</span>&nbsp;&nbsp;
+                <a href="#/app/following" class="followProfile">{{following}} Following</a>
+                <div class="stars" ng-bind-html="star"></div>
+            </div>
+            <div class="form">
+              <form name="contactForm" novalidate>
+                <input required ng-model="contact.Name" type="text" class="whiteColor button button-block buttonTransparent" placeholder="Name"/>
+                <input id="usernamE" disabled required ng-model="contact.Username" type="text" class="whiteColor button button-block buttonTransparent" placeholder="Username"/>
+                <textarea required ng-model="contact.Message" class="button button-block buttonTransparent" rows="3" placeholder="Your Message"></textarea>
+                <a nav-transition="android" ng-click="sendEmail(contact)" ng-disabled="contactForm.$invalid" class="button button-block buttonRed">SEND</a>
+              </form>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

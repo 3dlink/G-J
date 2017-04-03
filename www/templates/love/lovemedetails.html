@@ -1,0 +1,95 @@
+<!-- <ion-view view-title="Lovin' Me" id="moduleMySettings" class="backgroundSettings">
+  <ion-content >
+    <div class="viewContent" style="">
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <div ng-drag="true" ng-repeat="foo in foos" end-repeat class="swiper-slide" style="text-align: center; font-size: 50 px;">
+            <div class="swiper-slide" style="width:100%; margin-top:5px;">
+              <div class="redColor headerSlider" style="text-align:center; padding-left:10px;" >
+                [<span>{{foo.type}}</span>/<span></span>{{foo.color}}</span>/<span></span>{{foo.material}}</span>]
+              </div>
+              <a style="margin-right:5px; height:300px; width: 100%; margin: 0 auto;" class="itemFeed">
+                <div class="itemIMG" style="background-image:url({{foo.img1}});">
+                </div>
+                <hr style="width:10px; position:absolute; text-align:left; margin-left:7px; border: 0; border-top: 1px solid #BC0000;"/>
+                <div class="itemDetails redColor" style="text-align:left; padding:20px 20px;">
+                  <div class="pbrand">{{foo.brand}}</div>
+                  <div class="pname">{{foo.title}}</div>
+                  <p ng-if="foo.size != 0" class="psize">Size: {{foo.size}}</p>
+                  <p ng-if="foo.size == 0" class="psize">Size: -</p>
+                  <p class="pprice">${{foo.pricesite}}</p>
+                </div>
+                <div ng-click="likeHeart(foo)" class="itemLiked redColor" style="background-image:url({{foo.likeIMG}}); margin-top:-20px; margin-right:20px;">{{foo.likes}}</div>
+              </a>
+              <br />
+              <div style="margin:0 auto; text-align:center;">
+                <div ng-class="foo.buttonLiked" ng-click="likeHeart(foo)" class="button buttonRed resultButton resultButtonLike">
+                  <img src="assets/heartSearch.png" alt="" style="float:left;width: 25px; margin-top: 10px;"/>
+                  LIKE
+                </div>
+                <div class="button buttonRed resultButton resultButtonNext">
+                  <img src="assets/rowWhite.png" alt="" style="float:right;width: 10px; margin-top: 15px;"/>
+                  NEXT
+                </div>
+              </div>
+              <div class="clear"></div>
+              <br />
+              <div class="redColor" style="font-size:13px; text-align:center;">
+                <b>{{$index + 1}}</b> out of <b>{{totalSearch}}</b>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view> -->
+
+<ion-view view-title="Lovin' Me" id="moduleMySettings" class="backgroundSettings">
+  <ion-content >
+    <div class="viewContent" style="">
+      <div class="spaceDropIgnore" ng-drop="true" ng-drop-success="spaceDropIgnore($data,$event)"></div>
+      <div class="spaceDropLike" ng-drop="true" ng-drop-success="spaceDropLike($data,$event)"></div>
+      <div ng-drag="true" ng-drag-data="$index" ng-repeat="foo in foos" ng-class="c[$index]" style="text-align: center; font-size: 50 px; width:80%; margin:0 auto;">
+        <div class="swiper-slide" style="width:100%; margin-top:5px;">
+          <div class="redColor headerSlider" style="text-align:center; padding-left:10px;" >
+            [<span>{{foo.type}}</span>/<span></span>{{foo.color}}</span>/<span></span>{{foo.material}}</span>]
+          </div>
+          <a style="margin-right:5px; height:350px; width: 100%; margin: 0 auto; position:relative;" class="itemFeed">
+            <div class="Ignore redColor">NOPE</div>
+            <div class="LikesMe redColor">LIKE</div>
+            <div class="itemIMG" style="background-image:url({{foo.img1}});">
+            </div>
+            <hr style="width:10px; position:absolute; text-align:left; margin-left:40px; border: 0; border-top: 1px solid #BC0000;"/>
+            <div class="itemDetails redColor search" style="text-align:left; padding:20px 20px;">
+              <div class="pbrand">{{foo.brand}}</div>
+              <div class="pname">{{foo.title}}</div>
+              <p ng-if="foo.size != 0" class="psize">Size: {{foo.size}}</p>
+              <p ng-if="foo.size == 0" class="psize">Size: -</p>
+              <p class="pprice">${{foo.pricesite}}</p>
+              <!-- {{$index}} -->
+            </div>
+            <div ng-click="likeHeart(foo)" class="itemLiked redColor" style="background-image:url({{foo.likeIMG}}); margin-top:-20px; margin-right:20px;">{{foo.likes}}</div>
+          </a>
+          <br />
+          <div style="margin:0 auto; text-align:center;">
+            <div class="button buttonRed resultButton resultButtonNext" ng-click="spaceDropIgnore($index,$event)">
+              <img src="assets/rowWhiteLeft.png" alt="" style="float:left;width: 10px; margin-top: 15px;"/>
+              NOPE
+            </div>
+            <div style="opacity:0.5;" ng-class="foo.buttonLiked"  ng-click="spaceDropLike($index,$event)" class="button buttonRed resultButton resultButtonLike">
+              <img src="assets/heartSearch.png" alt="" style="float:right;width: 25px; margin-top: 10px;"/>
+              LIKE
+            </div>
+          </div>
+          <div class="clear"></div>
+          <br />
+          <div class="redColor" style="font-size:13px; text-align:center;">
+            <b>{{$index + 1}}</b> out of <b>{{totalSearch}}</b>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

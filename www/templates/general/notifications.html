@@ -1,0 +1,41 @@
+<style>
+  .old{
+    opacity: 0.6 !important;
+  }
+</style>
+<!-- <ion-view view-title="Notifications" id="moduleNotifications" class="backgroundGeneric2">
+    <ion-content>
+      <div class="viewContent">
+        <div ng-repeat="notify in notifications" class="itemNotity">
+          <div class="elementsNotify infoNotify redColor">
+            <a class="redColor">{{notify.name}}</a> {{notify.comment}}
+          </div>
+          <div class="elementsNotify iconNotify">
+            <img width="{{notify.size}}" src="{{notify.icon}}" />
+          </div>
+          <div class="elementsNotify imgNotify" style="background-image:url({{notify.img}});"></div>
+        </div>
+      </div>
+    </ion-content>
+    <div class="bottomTransparens"></div>
+</ion-view> -->
+
+
+
+<ion-view view-title="Notifications" id="moduleNotifications" class="backgroundGeneric2">
+    <ion-content>
+      <div class="viewContent">
+        <div ng-repeat="notify in notifications.slice().reverse()"  class="itemNotity {{notify.old}}">
+          <div class="elementsNotify infoNotify redColor">
+            <a menu-close href="#/appSeven/detailsMember/{{users[notify['user']]._id}}" class="redColor">{{users[ notify['user'] ].firstname}} {{users[ notify['user'] ].lastname}}</a> {{notify.action}} {{items[ notify['item'] ]['title']}}
+          </div>
+          <div ng-click="validate(notify._id, notify.icon)" style="position:absolute; width:60%; height:60px; right:0px;"></div>
+          <div class="elementsNotify iconNotify">
+            <img width="{{notify.size}}" src="{{notify.icon}}" />
+          </div>
+          <div class="elementsNotify imgNotify" style="background-image:url({{items[ notify['item']]['img1']}});"></div>
+        </div>
+      </div>
+    </ion-content>
+    <div class="bottomTransparens"></div>
+</ion-view>

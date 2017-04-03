@@ -1,0 +1,31 @@
+<ion-view view-title="SIGN UP" id="moduleRegister" class="loginContent">
+  <ion-content class="padding" >
+    <ion-nav-bar class="bar-clear">
+      <ion-nav-back-button class="button-clear">
+        <a class="button icon-left ion-chevron-left button-clear button-gjColor"> </a>
+        </ion-nav-back-button>
+    </ion-nav-bar>
+    <div class="content" ng-style="positionCenterLogin">
+      <form name="registerForm" novalidate>
+        <div class="contentFields">
+          <input required type="text" ng-model="Newuser.firstName" name="name" class="whiteColor button button-block buttonTransparent" placeholder="Name"/>
+          <input capitalize-first required type="text" ng-model="Newuser.username" name="username" class="whiteColor button button-block buttonTransparent" placeholder="Username"/>
+          <input capitalize-first required type="email" ng-model="Newuser.email" name="email" class="whiteColor button button-block buttonTransparent" placeholder="E-mail"/>
+          <span style="font-size:11px; color:red; padding-left:10px;" ng-show="registerForm.email.$error.email">*This is not a valid email.</span>
+          <input minlength="8" required type="password" ng-model="Newuser.password" name="password" class="whiteColor button button-block buttonTransparent" placeholder="Password"/>
+          <span style="font-size:11px; color:red; padding-left:10px;" ng-show="registerForm.password.$error.minlength">*Min Length 8 characters.</span>
+          <input minlength="8" required type="password" ng-model="cpassword" name="cpassword" class="whiteColor button button-block buttonTransparent" placeholder="Confirm your password"/>
+          <span style="font-size:11px; color:red; padding-left:10px;" ng-show="(registerForm.password.$dirty && registerForm.cpassword.$dirty) && (Newuser.password != cpassword)">*Password mismatch.</span>
+          <div class="containerCheck">
+            <input type="checkbox" ng-model="terms" name="terms" id="checkBoxID" required/>
+            <label for="checkBoxID">By signing in you accept our <br></label>
+            <a href="#/appSix/terms" ><strong>Terms of use and Privacy Policy<strong></a>
+          </div>
+          <a nav-transition="android" ng-click="new(Newuser)" ng-disabled="registerForm.$invalid" class="button button-block buttonRed" >
+              SIGN IN
+          </a>
+        </div>
+      </form>
+    </div>
+  </ion-content>
+</ion-view>

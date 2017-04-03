@@ -1,0 +1,21 @@
+<ion-view view-title="FORGOT YOUR PASSWORD?" id="moduleSignin" class="loginContent">
+  <ion-content has-header="true" class="padding" scroll="false" drag-content="false">
+    <ion-nav-bar class="bar-clear">
+      <ion-nav-back-button class="button-clear">
+        <a class="button icon-left ion-chevron-left button-clear button-gjColor"> </a>
+      </ion-nav-back-button>
+    </ion-nav-bar>
+    <div class="content" ng-style="positionCenterLogin">
+      <div class="contentFields">
+        <br /><br /><br />
+        <form name="forgotForm" novalidate>
+          <input capitalize required type="email" ng-model="User" class="button button-block buttonTransparent whiteColor" placeholder="E-mail"/>
+          <span style="font-size:11px; color:red; padding-left:10px;" ng-show="forgotForm.email.$error.email">*This is not a valid email.</span>
+          <a nav-transition="android" ng-click=resetPass(User) ng-disabled="forgotForm.$invalid" class="button button-block buttonRed">
+            SEND
+          </a>
+        </form>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

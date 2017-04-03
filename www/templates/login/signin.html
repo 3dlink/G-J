@@ -1,0 +1,35 @@
+<ion-view view-title="SIGN IN" id="moduleSignin" class="loginContent">
+  <ion-content has-header="true" class="padding" scroll="false" drag-content="false">
+    <ion-nav-bar class="bar-clear">
+      <ion-nav-back-button class="button-clear">
+        <a class="button icon-left ion-chevron-left button-clear button-gjColor"> </a>
+      </ion-nav-back-button>
+    </ion-nav-bar>
+    <div class="pre-modal" style="margin-left:-10px;" ng-hide="modal">
+        <div class="myModal" style="margin-left:5px;">
+          <div class="myContent padding redColor">
+            <div ng-click="closeModal()" class="closeModal ">X</div>
+            <div class="msjModal">Sorry, password or user<br /><span>are incorrect</span></div>
+            <hr />
+          </div>
+        </div>
+    </div>
+    <div class="content" ng-style="positionCenterLogin">
+      <div class="viewContent" style="position:relative;">
+        <!-- <div class="pre-modal" ng-hide="modal"> -->
+      <form name="loginForm" novalidate>
+        <div class="contentFields">
+          <input id="username" required name="email" ng-model="User.email" capitalize-first type="text" class="whiteColor button button-block buttonTransparent" placeholder="Username or E-mail"/>
+          <input minlength="8" required name="password" ng-model="User.password" type="password" class="whiteColor button button-block buttonTransparent" placeholder="Password"/>
+          <a nav-transition="android" ng-click=login(User) ng-disabled="loginForm.$invalid" class="button button-block buttonRed">
+            SIGN IN
+          </a>
+          <!-- <a href="#/app/youritem/1">Putp</a> -->
+        </div>
+      </form>
+      <div class="linksContent">
+        <a href="#/forgot" class="guestLink">Forgot your password?</a>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

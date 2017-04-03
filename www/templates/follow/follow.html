@@ -1,0 +1,27 @@
+<ion-view view-title="Follows" id="moduleFollow" class="backgroundGeneric">
+  <ion-content>
+    <ion-tabs class="tabs-striped tabs-top">
+      <ion-tab title="Followers">
+        <ion-nav-view name="tab-1">
+          <div class="itemFollow" ng-repeat="follower in followers">
+            <div class="followPicture" style="background-image:url({{follower.image}})"></div>
+            <a menu-close href="#/appSeven/detailsMember/{{following._id}}" class="nameFollow">{{follower.firstname}} {{follower.lastname}}</a>
+            <div ng-click="follow(follower)" class="buttonFollow" ng-class="follower.wineColorGail">{{follower.status}}</div>
+          </div>
+        </ion-nav-view>
+      </ion-tab>
+      <ion-tab title="Following">
+        <ion-nav-view name="tab-2">
+          <div class="itemFollow" ng-repeat="following in followings">
+            <div class="followPicture" style="background-image:url({{following.image}})"></div>
+            <a menu-close href="#/appSeven/detailsMember/{{following._id}}" class="nameFollow">{{following.firstname}} {{following.lastname}}</a>
+            <div ng-click="follow(following)" class="buttonFollow" ng-class="following.wineColorGail">{{following.status}}</div>
+            <div>
+            </div>
+          </div>
+        </ion-nav-view>
+      </ion-tab>
+    </ion-tabs>
+  </ion-content>
+  <div class="bottomTransparens"></div>
+</ion-view>

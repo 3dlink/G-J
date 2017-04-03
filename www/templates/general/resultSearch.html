@@ -1,0 +1,52 @@
+<ion-view view-title="SEARCH RESULT" id="moduleSearchResult" class="backgroundSettings">
+  <ion-content >
+    <div class="viewContent" style="padding-right:10px; padding-left:10px;">
+
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <div ng-repeat="foo in foos track by $index" end-repeat class="swiper-slide" style="text-align: center; font-size: 50 px;">
+            <div class="swiper-slide" style="width:100%; margin-top:5px;">
+              <div class="redColor" style="text-align:center; padding-left:10px;">
+                [Jewelry/Gold/Modern]
+              </div>
+              <a style="margin-right:5px; height:300px; width: 100%; margin: 0 auto;" class="itemFeed">
+                <div class="itemIMG" style="background-image:url(assets/jacket.png);">
+                  <div class="swiper-button-prev"></div>
+                  <div class="swiper-button-next"></div>
+                </div>
+                <div class="itemDetails redColor" style="text-align:left; padding:20px 20px;">
+                  <div class="pbrand">ZARA{{$index}}</div>
+                  <div class="pname">Jacket</div>
+                  <p class="psize">Size: XL</p>
+                  <p class="pprice">$21</p>
+                </div>
+                <div class="itemLiked redColor" style="background-image:url(assets/heartempty.png); margin-top:-20px; margin-right:20px;">4</div>
+              </a>
+              <br />
+              <div style="margin:0 auto; text-align:center;">
+                <div class="button buttonRed resultButton resultButtonLike">LIKE</div>
+                <div class="button buttonRed resultButton resultButtonNext">NEXT</div>
+              </div>
+              <div class="clear"></div>
+              <br />
+              <div class="redColor" style="font-size:13px; text-align:center;">
+                <b>{{$index + 1}}</b> out of <b>{{totalSearch}}</b>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+
+
+      <!-- <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <div ng-repeat="foo in foos track by $index" end-repeat class="swiper-slide" ng-class="{'red': $index % 2 != 0, 'blue': $index % 2 == 0}" style="text-align: center; font-size: 50 px;">
+            <div  class="swiper-slide">Slide 10</div>
+          </div>
+        </div>
+      </div> -->
+    </div>
+  </ion-content>
+</ion-view>

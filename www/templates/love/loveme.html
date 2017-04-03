@@ -1,0 +1,12 @@
+<ion-view view-title="Lovin' Me" id="moduleLoveme" class="backgroundGeneric">
+    <ion-content>
+      <div class="viewContent">
+        <div ng-repeat="loveme in lovemes" class="itemLoveme">
+          <div class="imgLoveme left" style="background-image:url({{loveme.img}});"></div>
+          <a href="#/appNine/lovemedetails/{{loveme.id}}/{{loveme.skip}}" class="right lovemePlus"> </a>
+          <div class="redColor detailsLoveme center" ng-bind-html="loveme.details"> </div>
+          <div class="clear"></div>
+        </div>
+      </div>
+    </ion-content>
+</ion-view>

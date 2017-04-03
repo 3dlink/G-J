@@ -1,0 +1,17 @@
+<ion-view view-title="Terms & Conditions" id="moduleTutos">
+    <ion-content>
+      <div class="imgTuto Tuto1" ng-show="Tuto[1]">
+        <div class="tutoPaginator"><span> < </span> &nbsp;&nbsp; <b>1&nbsp;</b>of &nbsp;<span ng-click="next(2)"> 4 &nbsp;&nbsp;  > &nbsp;&nbsp;</span></div>
+      </div>
+       <div class="imgTuto Tuto2" ng-show="Tuto[2]">
+        <div class="tutoPaginator"> <a href="#/tuto1"> <  &nbsp;&nbsp; <b>2&nbsp;</b> </a> of <span ng-click="next(3)"> &nbsp; 4 &nbsp;&nbsp;  > </span> </div>
+      </div>
+     <div class="imgTuto Tuto3" ng-show="Tuto[3]">
+        <div class="tutoPaginator"> <a href="#/tuto2"> <  &nbsp;&nbsp; <b>3&nbsp;</b> </a> of <span ng-click="next(4)">&nbsp; 4 &nbsp;&nbsp;  > </span> </div>
+      </div>
+      <div class="imgTuto Tuto4" ng-show="Tuto[4]">
+        <div class="tutoPaginator"> <a href="#/tuto3"> <  &nbsp;&nbsp; <b>4&nbsp;</b></a> of <span ng-click="next(5)" >&nbsp;  4 &nbsp;&nbsp; > </span></div>
+      </div>
+      <div class="skipTerms"><a href="{{goFor}}">SKIP</a></div>
+    </ion-content>
+</ion-view>

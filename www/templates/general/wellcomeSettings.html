@@ -1,0 +1,18 @@
+<ion-view view-title="Welcome" id="moduleMySettingsWellcome" class="backgroundSettings">
+  <ion-content >
+    <div class="viewContent">
+      <div class="headerSettings">
+        <h4>Hi, <b>{{name}}</b></h4>
+        <p>Now that you’re all signed up, set up your preferences to easil find what you like.</p>
+      </div>
+      <div class="msjSelect">
+        First choose your 10 top favorite brands:
+      </div>
+        <div class="circleBrands">
+          <div class="whiteColor brandOption left" ng-class="brandActive[$index]" ng-click="brandSelected($index, brand.name)" ng-repeat="brand in brands"><span>{{brand.name}}</span></div>
+          <div class="clear"></div>
+        </div>
+        <a ng-click="saveInitBrands()" menu-close class="button button-block buttonRed" ng-class="disabled">NEXT</a>
+    </div>
+  </ion-content>
+</ion-view>

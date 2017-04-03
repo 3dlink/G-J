@@ -1,0 +1,84 @@
+<style>
+.bar .title{
+  font-size: 14px !important;
+  padding-top: 5px;
+}
+</style>
+
+<ion-side-menus ng-controller="feedController" enable-menu-with-back-views="true">
+    <ion-side-menu-content>
+        <ion-nav-bar class="menuProfile" align-title="center">
+            <ion-nav-title>
+                <span style="font-size:12px;" class="titleContact redColor">{{title}}</span>
+            </ion-nav-title>
+            <ion-nav-buttons side="left">
+                <button style="margin-top:5px;" class="redColor button-icon button button-positive ion-navicon optionIcon" menu-toggle="left"></button>
+            </ion-nav-buttons>
+        </ion-nav-bar>
+        <ion-nav-view name="menuContact"></ion-nav-view>
+    </ion-side-menu-content>
+    <ion-side-menu side="left">
+        <ion-content on-swipe-left="onSwipeLeft()">
+          <div class="bgToProfile" style="background:url({{imgaBackground}}) no-repeat fixed;">
+                <div class="transparenceContent">
+                    <div class="button-menu">
+                      <a menu-close href="#/appFour/notifications" class="optionBell right optionMenu redColor button-icon button-positive customIcon optionIcon" menu-toggle="right">
+                        <div class="numberNotifications">{{countNotify}}</div>
+                        <img src="assets/BellRed.png" alt="" />
+                      </a>
+                      <a menu-close href="#/appThree/mysettings" class="right optionMenu redColor optionIcon button-icon button-positive" menu-toggle="right">
+                        <img src="assets/settings.png" alt="" />
+                      </a>
+                    </div>
+                    <a menu-close href="#/app/profile">
+                      <!-- <div class="profileImgMenu" style="background-image:url({{image}});"></div> -->
+                      <div ng-show="fullImg" class=" profileImgMenu" style="background-image:url({{imgaProfile}}) !important;"></div>
+                      <div ng-show="emptyImg" class=" profileImgMenu emptyImg"><!-- <span class="redColor">PROFILE PIC</span> --></div>
+                    </a>
+                    <div class="nameMenu">{{name}}</div>
+                    <div class="followersOnMenu">
+                      <a menu-close href="#/app/followers" style="color: #fff; text-decoration: none;">{{follower}} followers</a> |
+                      <a menu-close href="#/app/following" style="color: #fff; text-decoration: none;">{{following}} following</a>
+                    </div>
+                    <div class="buttonsInMenu">
+                      <a menu-close href="#/appTwo/profile" class="buttonMenu userButton"></a>
+                      <div  class="contentButton">
+                        <a menu-close href="#/appTwo/profile">Profile</a>
+                      </div>
+
+                      <a menu-close href="#/app/feed" class="buttonMenu myFeedButton"></a>
+                      <div class="contentButton">
+                        <a menu-close href="#/app/feed">My Feed</a>
+                      </div>
+
+                      <a menu-close href="#/app/loveme" class="buttonMenu lovinButton"></a>
+                      <div class="contentButton">
+                        <a menu-close href="#/app/loveme">Lovin' Me</a>
+                      </div>
+
+                      <a menu-close href="#/app/mymatches" class="buttonMenu matchesButton"></a>
+                      <div class="contentButton">
+                        <a menu-close href="#/app/mymatches">My Matches</a>
+                      </div>
+
+                      <a menu-close href="#/app/myloves" class="buttonMenu lovesButton"></a>
+                      <div class="contentButton">
+                        <a menu-close href="#/app/myloves">My Loves</a>
+                      </div>
+
+                      <a menu-close href="#/app/follows" class="buttonMenu followersFollowing"></a>
+                      <div class="contentButton">
+                        <a menu-close href="#/app/follows">Follows</a>
+                      </div>
+                    </div>
+                    <div class="footerMenu redColor">
+                      <a menu-close href="#/tuto1" class="redColor" style="text-decoration: none;">Tutorial</a> |
+                      <a menu-close class="redColor" href="#/appSix/terms" style="text-decoration: none;">Terms & Conditions</a> |
+                      <a menu-close href="#/appThree/faq" class="redColor" style="text-decoration: none;">FAQ</a> |
+                      <a menu-close class="redColor" ng-click="logout()" style="text-decoration: none;">Log Out</a>
+                    </div>
+                </div>
+            </div>
+        </ion-content>
+    </ion-side-menu>
+</ion-side-menus>

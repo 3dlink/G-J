@@ -1,0 +1,92 @@
+<ion-view view-title="My Matches" id="moduleMyMatchs" class="backgroundGeneric">
+  <ion-content>
+    <ion-tabs class="tabs-striped tabs-top">
+      <ion-tab title="Pending Matches">
+        <ion-nav-view name="tab-1">
+          <div ng-repeat="match in matchs" class="myMatches">
+            <div class="myPrend left">
+              <div class="itemMatch">
+                <div class="itemIMG" style="background-image:url({{match['my'].img}});"></div>
+                <hr style="width:10px; position:absolute; text-align:left; margin-left:7px; border: 0; border-top: 1px solid #BC0000;"/>
+                <div class="itemDetails redColor">
+                  <div class="pbrand">{{match['my'].brand}}</div>
+                  <div class="pname">{{match['my'].title}}</div>
+                  <p ng-if="match['my'].size != 0" class="psize">Size: {{match['my'].size}}</p>
+                  <p ng-if="match['my'].size == 0" class="psize">Size: -</p>
+                  <p class="pprice">${{match['my'].pricesite}}</p>
+                </div>
+                <div class="itemLiked redColor" style="background-image:url(assets/heartempty.png);">{{match['my'].likes}}</div>
+              </div>
+            </div>
+            <div class="yourPrend right">
+              <div class="itemMatch">
+                <div class="itemIMG" style="background-image:url({{match['your'].img}});"></div>
+                <hr style="width:10px; position:absolute; text-align:left; margin-left:7px; border: 0; border-top: 1px solid #BC0000;"/>
+                <div class="itemDetails redColor">
+                  <div class="pbrand">{{match['your'].brand}}</div>
+                  <div class="pname">{{match['your'].title}}</div>
+                  <p ng-if="match['your'].size != 0" class="psize">Size: {{match['your'].size}}</p>
+                  <p ng-if="match['your'].size == 0" class="psize">Size: -</p>
+                  <p class="pprice">${{match['your'].pricesite}}</p>
+                </div>
+                <div class="itemLiked redColor" style="background-image:url(assets/heartlikes.png);">{{match['your'].likes}}</div>
+              </div>
+            </div>
+            <div class="match center">
+              <a href="#/appTeen/newmatch/{{match['my']._id}}/{{match['your']._id}}"> <img src="assets/matchRed.png" alt=""> </a>
+            </div>
+            <div class="clear"></div>
+          </div>
+
+          <div ng-repeat="matchSaved in matchSaveds" class="myMatches">
+            <div class="myPrend left">
+              <div ng-bind-html="matchSaved['my']" class="itemFeed" style="height: 220px;">
+              </div>
+            </div>
+            <div class="yourPrend right">
+                <div ng-bind-html="matchSaved['your']" class="itemFeed" style="height: 220px;">
+                </div>
+            </div>
+            <div class="match center">
+              <a href="#/appTeen/matchOld/{{matchSaved['id']}}"> <img src="assets/matchRed.png" alt=""> </a>
+            </div>
+            <div class="clear"></div>
+          </div>
+
+
+        </ion-nav-view>
+      </ion-tab>
+      <ion-tab title="Closed Deals">
+        <ion-nav-view name="tab-2">
+          <div ng-repeat="closeDeal in closeDeals" class="itemNotity" ng-class={{notify._id}} ng-init="deals=[]">
+            <!-- {{closeDeal}} -->
+            <div  ng-show="deals[closeDeal._id]" class="msjDeleted">
+              <img src="assets/trashWhite.png" class="trashWhite" ng-click="msj(closeDeal)"/>
+              <span ng-click="msj(closeDeal)" >DELETE THIS CLOSED DEAL?</span>
+              <img ng-click="deals[closeDeal._id]=false" src="assets/closeCircleWhite.png" class="plusWhite"/>
+            </div>
+            <img ng-click="deals[closeDeal._id]=true" src="assets/trashRed.png" class="trash"/>
+            <div class="elementsNotify infoNotify redColor">
+              You <span style="font-style: italic;"> {{closeDeal.action}} </span> this item with <a href="#/appSeven/detailsMember/{{closeDeal.member}}" class="redColor">{{closeDeal.name}}</a>
+            </div>
+            <div class="elementsNotify iconNotify">
+              <img width="{{closeDeal.size}}" src="{{closeDeal.icon}}" />
+            </div>
+            <div class="elementsNotify imgNotify" style="background-image:url({{closeDeal.img}});"></div>
+          </div>
+
+          <div ng-repeat="byRate in byRates" class="itemNotity" ng-init="deals=[]">
+            <div class="elementsNotify infoNotify redColor">
+              Don't forget to rate <a class="redColor" href="#/appFive/rate/{{byRate.member}}/{{byRate._id}}">{{byRate.name}}</a>
+            </div>
+            <div class="elementsNotify iconNotify">
+              <img width="25" src="assets/starFull.png" />
+            </div>
+            <div class="elementsNotify imgNotify" style="border-radius: 100%; background-image: url({{usersR[byRate.member].image}});">
+            </div>
+          </div>
+        </ion-nav-view>
+      </ion-tab>
+    </ion-tabs>
+  </ion-content>
+</ion-view>
